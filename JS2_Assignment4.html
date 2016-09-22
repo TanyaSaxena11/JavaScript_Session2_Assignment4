@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Brackets testing</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//str is the string to parse
+	function checkBrackets(str){
+		//depth of the paremtheses
+		var depth =0;
+		//for each char in the string :2 cases
+		for(var i in str){
+			if (str[i] == '(') {
+				//if char is the opening braces we increase the depth
+				depth++;				
+			}
+			else if(str[i] ==')'){
+				//if char is the closing braces we decrease the depth
+				depth--;
+			}
+			//if depth is negative we have a closing braces before any matching braces
+			if (depth < 0) {
+				//return false;
+				return console.log("incorrect");
+			}
+			}
+			//if depth is not null closing bracket is missing
+			if (depth > 0) {
+				//return false;
+				return console.log("incorrect");
+			}
+
+			//return true;		
+			return console.log("correct");
+	}
+
+	console.log(checkBrackets('( ( a + b ) / 5 abd )'));
+	console.log(checkBrackets(') ( a + b ) )'));
+	console.log(checkBrackets('( b * ( c + d *2 / ( 2 + ( 12 abc / ( a + 3 ) ) ) )'));
+	</script>
+
+</body>
+</html>
